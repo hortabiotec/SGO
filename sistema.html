@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>BioTec (SGO)</title>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css'>
+  <link rel='stylesheet' href='https://unpkg.com/css-pro-layout@1.1.0/dist/css/css-pro-layout.css'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap'>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="icon" href="favicon" type="image/x-icon">
+
+</head>
+
+<body>
+  <div class="layout has-sidebar fixed-sidebar fixed-header">
+    <aside id="sidebar" class="sidebar break-point-sm has-bg-image">
+      <a id="btn-collapse" class="sidebar-collapser"><i class="ri-arrow-left-s-line"></i></a>
+      <div class="image-wrapper">
+        <img src="assets/images/sidebar-bg.jpg" alt="sidebar background" />
+      </div>
+      <div class="sidebar-layout">
+        <div class="sidebar-header">
+          <div class="pro-sidebar-logo">
+            <div><i class="fas fa-leaf"></i></div>
+            <h5>BioTec (BETA)</h5>
+          </div>
+        </div>
+        <div class="sidebar-content">
+          <nav class="menu open-current-submenu">
+            <ul>
+              <li class="menu-header"><span></span></li>
+              <li class="menu-item sub-menu">
+                <a href="#">
+                  <span class="menu-icon">
+                    <i class="fas fa-pencil-alt"></i>
+                  </span>
+                  <span class="menu-title">Registrar</span>
+                  <span class="menu-suffix">
+                    <span class="badge primary">NOVO</span>
+                  </span>
+                </a>
+                <div class="sub-menu-list">
+                  <ul>
+                    <li class="menu-item sub-menu">
+                      <a href="#">
+                        <span class="menu-title">Registros padrão</span>
+                        <i class="fas fa-pencil-alt"></i>
+                      </a>
+                      <div class="sub-menu-list">
+                        <ul>
+                          <li class="menu-item">
+                            <a href="#" onclick="loadPage('https://docs.google.com/forms/d/e/1FAIpQLSemRqqeoc5fYOB0eZbIcc4Lof7xJLIP8syvyuZ2hAAR3c3pqw/viewform?usp=sf_link')">
+                              <span class="menu-title">Plantio</span>
+                              <i class="fas fa-seedling"></i>
+                            </a>
+                          </li>
+                          <li class="menu-item">
+                            <a href="#" onclick="loadPage('https://docs.google.com/forms/d/e/1FAIpQLScEixH6t1k6RTO2rKCZsaz8jmo5DWvp2wEO2h2vmOCB2FCMJw/viewform?usp=sf_link')">
+                              <span class="menu-title">Transplante</span>
+                              <i class="fas fa-arrows-alt"></i>
+                            </a>
+                          </li>
+                          <li class="menu-item">
+                            <a href="#" onclick="loadPage('https://docs.google.com/forms/d/e/1FAIpQLSe2MqxulLJ6OXx4u1ZWYCDU8un7m9K6CaDdY1JPin1hsM159Q/viewform?usp=sf_link')">
+                              <span class="menu-title">Colheita</span>
+                              <i class="fas fa-carrot"></i>
+                            </a>
+                          </li>
+                          <li class="menu-item">
+                            <a href="#" onclick="loadPage('https://docs.google.com/forms/d/e/1FAIpQLSd1EQnpIIB1OJf3sJ3x6RbhcamyjTOwdmrXTXAJR7tdBllxrQ/viewform?usp=sf_link')">
+                              <span class="menu-title">Manutenção</span>
+                              <i class="fas fa-wrench"></i>
+                            </a>
+                          </li>
+                          <li class="menu-item sub-menu">
+                            <a href="#">
+                              <span class="menu-title">Dados Cientificos</span>
+                              <i class="fas fa-flask"></i>
+                            </a>
+                            <div class="sub-menu-list">
+                              <ul>
+                                <li class="menu-item">
+                                  <a href="#" onclick="loadPage('https://docs.google.com/forms/d/e/1FAIpQLSfoLMZ46Kukp86a-cGkamv6VuJZ-O2hzfNAIqPw3s3GkcfggQ/viewform?usp=sf_link')">
+                                    <span class="menu-title">cultivar</span>
+                                    <i class="fas fa-seedling"></i>
+                                  </a>
+                                </li>
+                                <li class="menu-item">
+                                  <a href="#" onclick="loadPage('https://docs.google.com/forms/d/e/1FAIpQLSf1iEK2mdiOGnuDpFcq4KArqKCiO_tXHNW4TYaFUOQPAIGRSA/viewform?usp=sf_link')">
+                                    <span class="menu-title">Pragas e doença</span>
+                                    <i class="fas fa-bacterium"></i>
+                                  </a>
+                                </li>
+                                <li class="menu-item">
+                                  <a href="#" onclick="loadPage('https://docs.google.com/forms/d/e/1FAIpQLScv1eOJ3vGPCW6-lr3iC_mENv8jJisPaxsLWtw1ffh-Phzrdw/viewform?usp=sf_link')">
+                                    <span class="menu-title">Ervas Daninhas</span>
+                                    <i class="material-icons">grass</i>
+                                  </a>
+                                  <div class="sub-menu-list">
+                                    <ul>
+                                      <li class="menu-item">
+                                        <a href="#" onclick="loadPage('#')">
+                                          <span class="menu-title">-</span>
+                                        </a>
+                                      </li>
+                                      <li class="menu-item">
+                                        <a href="#" onclick="loadPage('#')">
+                                          <span class="menu-title">-</span>
+                                        </a>
+                                      </li>
+                                      <li class="menu-item sub-menu">
+                                        <a href="#">
+                                          <span class="menu-title">-</span>
+                                        </a>
+                                        <div class="sub-menu-list">
+                                          <ul>
+                                            <li class="menu-item">
+                                              <a href="#">
+                                                <span class="menu-prefix">&#127881;</span>
+                                                <span class="menu-title">You made it </span>
+                                              </a>
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="menu-item sub-menu">
+                <a href="#">
+                  <span class="menu-icon">
+                    <i class="fas fa-search"></i>
+                  </span>
+                  <span class="menu-title">Consultar</span>
+                </a>
+                <div class="sub-menu-list">
+                  <ul>
+                    <li class="menu-item">
+                      <a href="#" onclick="loadPage('https://docs.google.com/spreadsheets/d/e/2PACX-1vTz0LcrX3mMwCiycAxw8rndQ6BTSZe0irHeokI9ImupRtA82ImwQ2DkumrysnB3kO2B-zJduKnEtxXY/pubhtml')">
+                        <span class="menu-title">Registros de cultivar</span>
+                        <i class="fas fa-folder"></i>
+                        <i class="fas fa-search"></i>
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#" onclick="loadPage('https://docs.google.com/spreadsheets/d/e/2PACX-1vRj7KwagI9Cc30lq0kcWGTcTxtrBdTfVTyCtwBRwR2iyphagLrz2oNH27nUwd57SvhmPr53eUtQ8nG3/pubhtml')">
+                        <span class="menu-title">Registros de Plantios</span>
+                        <i class="fas fa-folder"></i>
+                        <i class="fas fa-search"></i>
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#" onclick="loadPage('https://docs.google.com/spreadsheets/d/e/2PACX-1vR0HgsF_x3YBr7bY96ZfpprFEhI4O4nBrLAaSiiwMMRHD9m1wycsQatw_2my0hdV0xOl5YwMaubdRXD/pubhtml')">
+                        <span class="menu-title">Registros de Transplantes</span>
+                        <i class="fas fa-folder"></i>
+                        <i class="fas fa-search"></i>
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#" onclick="loadPage('https://docs.google.com/spreadsheets/d/e/2PACX-1vQaQeXG3CJmJYiiC29KBjz1_cXZ2lPFvL30Q5c1B2VyiEOcPc8D5CB8Qk-9dttja7f3n0iabKnAvMr6/pubhtml')">
+                        <span class="menu-title">Registros de Colheitas</span>
+                        <i class="fas fa-folder"></i>
+                        <i class="fas fa-search"></i>
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#" onclick="loadPage('https://docs.google.com/spreadsheets/d/e/2PACX-1vSQotsmTVmojWIKVk9d0ndIr-zaMqVI3W5mo35OLh-FqkgS2cR58YVB3s3NdVQ7zVgduq-_8_73VWSy/pubhtml')">
+                        <span class="menu-title">Registros de Manutençoẽs</span>
+                       <i class="fas fa-folder"></i>
+                        <i class="fas fa-search"></i>
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#" onclick="loadPage('https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-3aTtEevV1eGSroFZH2xaAcyMdMpjt2ydSl9LQBZnQfMMgg68SJWvH1PIpy2JZm2XAnZo8N8KFZOK/pubhtml')">
+                        <span class="menu-title">Registros de Ervas Daninhas</span>
+                        <i class="fas fa-folder"></i>
+                        <i class="fas fa-search"></i>
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="#" onclick="loadPage('https://docs.google.com/spreadsheets/d/e/2PACX-1vQoRMfufonUzKwXraf0HBxBpzwoKT4pGO6fcADJ4yB4-oCYTcRmV5hyainSwwAmY5k-Xss-8HfLX97f/pubhtml')">
+                        <span class="menu-title">Registros de Pragas e Doenças</span>
+                        <i class="fas fa-folder"></i>
+                        <i class="fas fa-search"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="menu-item sub-menu">
+                <a href="#">
+                  <span class="menu-icon">
+                    <i class="material-icons">house</i>
+                  </span>
+                  <span class="menu-title">Estruturas</span>
+                </a>
+                <div class="sub-menu-list">
+                  <ul>
+                    <li class="menu-item sub-menu">
+                      <a href="#">
+                        <span class="menu-title">Estufa</span>
+                        <i class="fas fa-warehouse"></i>
+                      </a>
+                      <div class="sub-menu-list">
+                        <ul>
+                          <li class="menu-item">
+                            <a href="404.html" onclick="loadPage('https:192.168.0.123')">
+                              <span class="menu-title">Sistemas</span>
+                              <i class="fas fa-thermometer-half"></i>
+                            </a>
+                          </li>
+                          <li class="menu-item">
+                            <a href="404.html" onclick="loadPage('')">
+                              <span class="menu-title">Documentação</span>
+                              <i class="fas fa-folder"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="menu-item sub-menu">
+                      <a href="#">
+                        <span class="menu-title">Horta</span>
+                        <i class="fas fa-leaf"></i>
+                      </a>
+                      <div class="sub-menu-list">
+                        <ul>
+                          <li class="menu-item">
+                            <a href="404.html" onclick="loadPage('')">
+                              <span class="menu-title">Irrigação</span>
+                              <i class="fas fa-tint"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="menu-item sub-menu">
+                <a href="#">
+                  <span class="menu-icon">
+                    <i class="fas fa-images"></i>
+                  </span>
+                  <span class="menu-title">Album de Fotos</span>
+                </a>
+                <div class="sub-menu-list">
+                  <ul>
+                    <li class="menu-item">
+                      <a href="https://drive.google.com/drive/folders/1YPIQ4nfURf-eABnjzFQdc2q27ywDuYyH5Ab9IDc_q-lHfxzrjgr7x6BblUouCtgIqW2PoX1i?usp=sharing" target="_blank">
+                        <span class="menu-title">Ver Album </span>
+                        <i class="fas fa-images"></i>
+                      </a>
+                    </li>
+                    <li class="menu-item">
+                      <a href="" target="_blank">
+                        <span class="menu-title">Enviar Foto</span> 
+                        <i class="fas fa-cloud-upload-alt"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="menu-header" style="padding-top: 20px"><span> Complemento </span></li>
+              <li class="menu-item sub-menu">
+                <a href="#">
+                  <span class="menu-icon">
+                    <i class="ri-book-2-fill"></i>                  
+                  </span>
+                  <span class="menu-title">Acervo Biotec</span>
+                  <span class="menu-suffix">
+                  <span class="badge secondary">Novo</span>
+                </a>
+                <div class="sub-menu-list">
+                  <ul>
+                    <li class="menu-item">
+                      <a href="https://drive.google.com/drive/folders/153P1gCDcE650k3WSWhz_38nEOAOBcaVgKWE0UTegwkEgC5ZTNmIFx5hoGR3DvKZbLvkLQH7z?usp=sharing" target="_blank">
+                        <span class="menu-title">Abrir Acervo</span>
+                        <i class="ri-book-2-fill"></i>
+                      </a>
+                    </li>                    
+                    <li class="menu-item">
+                      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfs612AeFRmqtpWoeFqIpTztMdiv-c_3K4MKmmtMEAWDMI2EA/viewform?usp=sf_link" target="_blank">
+                        <span class="menu-title">Enviar Material</span>
+                        <i class="fas fa-cloud-upload-alt"></i>
+                      </a>
+                    </li>                    
+            </ul>
+              <li class="menu-item">
+                <a href="https://forms.gle/KvMLdFnMPTS8jKnV7" target="_blank">
+                  <span class="menu-icon">
+                    <i class="ri-service-fill"></i>
+                  </span>
+                  <span class="menu-title">Enviar feedback</span>
+                </a>
+              </li>
+              <li class="menu-item">
+                <a href="Informaçao.html" target="_blank">
+                  <span class="menu-icon">
+                    <i class="ri-information-fill"></i>
+                  </span>
+                  <span class="menu-title">Informaçoes</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="sidebar-footer">
+         <div class="footer-box">
+  <div style="padding: 2px;">
+    <span style="display: block; margin-bottom: 2px;">
+      <img alt="preview badge" src="logo 0.png" style="width: 300px; height: auto;">
+    </span>
+  </div>
+</div>
+
+    </aside>
+    <div id="overlay" class="overlay"></div>
+    <div class="layout">
+      <main class="content">
+        <div>
+          <div>
+            <a id="btn-toggle" href="#" class="sidebar-toggler break-point-sm">
+              <i class="ri-menu-line ri-xl"></i>
+            </a>
+            <iframe id="content-frame" src="home.html" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; width: 100%; height: 100%;"></iframe>
+
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src='https://unpkg.com/@popperjs/core@2'></script>
+  <script src="./script.js"></script>
+  <script>
+    function loadPage(url) {
+      const contentFrame = document.getElementById("content-frame");
+      contentFrame.setAttribute("src", url);
+    }
+  </script>
+</body>
+
+</html>

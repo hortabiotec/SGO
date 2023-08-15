@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <title>LOGIN BIOTEC SGO</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="cadeadofavicon.png" type="image/x-icon">
+    <style>
+      body {
+        font-family: 'Helvetica', sans-serif;
+        font-weight: bold;
+        background-image: url('background.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      form {
+        width: 80%;
+        max-width: 300px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-align: center;
+      }
+      input[type="text"],
+      input[type="password"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #4caf50;
+        color: white;
+        font-weight: bold;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      .error-message {
+        color: #eb5b08;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      .shake {
+        animation: shake 0.5s;
+        animation-iteration-count: 3;
+      }
+      @keyframes shake {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(10px); }
+        50% { transform: translateX(-10px); }
+        75% { transform: translateX(10px); }
+        100% { transform: translateX(0); }
+      }
+      .loading-gif {
+        display: none;
+        margin: 20px auto;
+        width: 50px;
+        height: 50px;
+      }
+      .loading-message {
+        display: none;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <h2 style="font-size: 24px;">Login sistema Biotec</h2>
+      <img src="logo 0.png" alt="Imagem de login" style="max-width: 100%; margin-top: 5px;">
+      <label for="username">Nome de usuário:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Senha:</label>
+      <input type="password" id="password" name="password" required>
+      <input type="submit" value="Login" onclick="checkCredentials(event)">
+      <div class="error-message" id="error-message"></div>
+      <img class="loading-gif" id="loading-gif" src="loading.gif" alt="Loading GIF">
+      <div class="loading-message" id="loading-message">Acessando sistema...</div>
+    </form>
+
+    <script>
+      function checkCredentials(event) {
+        event.preventDefault();
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        
+        // Estrutura de dados com informações de login (usuário:senha)
+        var usersAndPasswords = {
+    "kamiladotas": "admin",
+    "jeferson": "admin",
+    "exemplo_user": "123456",
+    "kamila": "kamila29",
+    "joaovvcp": "joaovvcp2023",
+    "ytalla2023": "ytralla123", 
+    "off_cristielly_": "100615",
+    "121314": "121314",
+    "@kaua_ny": "1234567890",
+    "mingotti04": "maria0402"
+};
+
+        
+        // Verifica se as credenciais estão corretas
+        if (usersAndPasswords.hasOwnProperty(username) && usersAndPasswords[username] === password) {
+          var loadingGif = document.getElementById("loading-gif");
+          var loadingMessage = document.getElementById("loading-message");
+          loadingGif.style.display = "block";
+          loadingMessage.style.display = "block";
+          
+          setTimeout(function() {
+            window.open("sistema.html", "_self"); // Redireciona para a página 
+          }, 1500);
+        } else {
+          var errorMessage = document.getElementById("error-message");
+          errorMessage.innerHTML = 'Usuário ou senha incorretos. Em caso de esquecimento, entre em contato com o administrador do projeto ou solicite uma redefinição <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1ukPVcabPGlLyQmrS-nmnZBQIzuF7M816Z-YgzS0muz6-2Q/viewform?usp=sf_link">clicando aqui</a>.';
+          document.getElementById("username").value = "";
+          document.getElementById("password").value = "";
+          document.getElementById("username").focus();
+          document.getElementsByTagName("form")[0].classList.add("shake");
+          
+          setTimeout(function() {
+            document.getElementsByTagName("form")[0].classList.remove("shake");
+          }, 500);
+        }
+      }
+    </script>
+    
+  </body>
+</html>
+

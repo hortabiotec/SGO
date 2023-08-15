@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Criador</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link  rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<style>@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+    
+    html {
+        height: 100%;
+    }
+    body {
+        background-color: #bcdee7;
+        position: fixed;
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+        font: normal 14px/1.618em "Montserrat", sans-serif;
+        -webkit-font-smoothing: antialiased;
+    }
+    body:after {
+        content: "";
+        background-image: url("nature-8035211.jpg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    body:before {
+        content: "";
+        height: 0px;
+        padding: 0px;
+        border: 110em solid #313440;
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        z-index: 2;
+        display: block;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-animation: puff_portrait 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+        animation: puff_portrait 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+    }
+    h1, h2 {
+        font-weight: 400;
+        margin: 0px 0px 5px 0px;
+    }
+    h1 {
+        font-size: 24px;
+        font-family: "Lexend", sans-serif;
+    }
+    h2 {
+        color: #FFB300;
+        font-family: "Rubik", sans-serif;
+        font-size: 16px;
+    }
+    p {
+        margin: 0px;
+    }
+    .profile-card {
+        background: #FFB300;
+        width: 56px;
+        height: 56px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 2;
+        overflow: hidden;
+        opacity: 0;
+        margin-top: 70px;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+        box-shadow: 0px 3px 6px rgba(0 ,0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+        -webkit-animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia_landscape 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+        animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia_landscape 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+    }
+    .profile-card header {
+        width: 179px;
+        height: 280px;
+        padding: 40px 20px 30px 20px;
+        display: inline-block;
+        float: left;
+        border-right: 2px dashed #EEEEEE;
+        background: #FFFFFF;
+        color: #000000;
+        margin-top: 50px;
+        opacity: 0;
+        text-align: center;
+        -webkit-animation: moveIn 1s 3.1s ease forwards;
+        animation: moveIn 1s 3.1s ease forwards;
+    }
+    .profile-card header h1 {
+        color: #4f9427;
+    }
+    .profile-card header a {
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        margin: 25px 30px;
+    }
+    .profile-card header a:after {
+        position: absolute;
+        content: "";
+        bottom: 3px;
+        right: 3px;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #FFFFFF;
+        border-radius: 50%;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+        animation: scaleIn 0.3s 3.5s ease forwards;
+    }
+    
+    /* Adicionar a imagem */
+    .profile-card header a:after {
+        background-image: url("brasileiro.jpg");
+        background-size: cover;
+    }
+    
+    
+    .profile-card header a > img {
+        width: 120px;
+        height: 120px;
+        background-color: #1d89e6;
+        object-fit: none;
+        object-position: center;
+        max-width: 100%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        -webkit-transition: -webkit-box-shadow 0.3s ease;
+        transition: box-shadow 0.3s ease;
+        -webkit-box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.06);
+        box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.06);
+    }
+    .profile-card header a:hover > img {
+        -webkit-box-shadow: 0px 0px 0px 12px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 0px 12px rgba(0, 0, 0, 0.1);
+    }
+    .profile-card .profile-bio {
+        width: 175px;        
+        height: 180px;
+        display: inline-block;
+        float: right;
+        padding: 50px 20px 30px 20px;
+        background: #FFFFFF;
+        color: #333333;
+        margin-top: 50px;
+        text-align: center;
+        opacity: 0;
+        -webkit-animation: moveIn 1s 3.1s ease forwards;
+        animation: moveIn 1s 3.1s ease forwards;
+    }
+    .profile-social-links {
+        width: 218px;        
+        display: inline-block;
+        float: right;
+        margin: 0px;
+        padding: 15px 20px;
+        background: #FFFFFF;
+        margin-top: 50px;
+        text-align: center;
+        opacity: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-animation: moveIn 1s 3.1s ease forwards;
+        animation: moveIn 1s 3.1s ease forwards;
+    }
+    .profile-social-links li {
+        list-style: none;
+        margin: -5px 0px 0px 0px;
+        padding: 0px;
+        float: left;
+        width: 33.3%;
+        text-align: center;
+    }
+    .profile-social-links li a {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        padding: 6px;
+        position: relative;
+        overflow: hidden!important;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+    }
+    .profile-social-links li a img {
+        position: relative;
+        z-index: 1;
+    }
+    .profile-social-links li a:before {
+        display: block;
+        content: "";
+        background: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 36px;
+        height: 36px;
+        opacity: 1;
+        -webkit-transition: transform 0.4s ease, opacity 1s ease-out;
+        transition: transform 0.4s ease, opacity 1s ease-out;
+        -webkit-transform: scale3d(0, 0, 1);
+        transform: scale3d(0, 0, 1);
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+    }
+    .profile-social-links li a:hover:before {
+        -webkit-animation: ripple 1s ease forwards;
+        animation: ripple 1s ease forwards;
+    }
+    .profile-social-links li a img,
+    .profile-social-links li a svg {
+        width: 24px;
+    }
+    
+    
+    @media screen and (min-aspect-ratio: 4/3) {
+        body {
+            background-size: 100% auto;
+        }
+        body:before {
+            width: 0px;
+        }
+        @-webkit-keyframes puff {
+            0% {
+                top: 100%;
+                width: 0px;
+                padding-bottom: 0px;
+            }
+            100% {
+                top: 50%;
+                width: 100%;
+                padding-bottom: 100%;
+            }	
+        }
+        @keyframes puff {
+            0% {
+                top: 100%;
+                width: 0px;
+                padding-bottom: 0px;
+            }
+            100% {
+                top: 50%;
+                width: 100%;
+                padding-bottom: 100%;
+            }	
+        }
+    }
+    @media screen and (min-height: 480px) {
+        .profile-card {
+            -webkit-animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia_portrait 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+            animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia_portrait 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+        }
+        .profile-card header {
+            width: auto;
+            height: auto;
+            padding: 30px 20px;
+            display: block;
+            float: none;
+            border-right: none;
+        }
+        .profile-card .profile-bio {
+            width: auto;
+            height: auto;
+            padding: 15px 20px 30px 20px;
+            display: block;
+            float: none; 
+        }
+        .profile-social-links {
+            width: 100%;       
+            display: block;
+            float: none; 
+        }
+    }
+    @media screen and (min-aspect-ratio: 4/3) {
+        body {
+            background-size: 100% auto;
+        }
+        body:before {
+            width: 0px;
+            -webkit-animation: puff_landscape 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+            animation: puff_landscape 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+        }
+    }
+    @-webkit-keyframes init {
+        0% {
+            width: 0px;
+            height: 0px;
+        }
+        100% {
+            width: 56px;
+            height: 56px;
+            margin-top: 0px;
+            opacity: 1;
+        }	
+    }
+    @keyframes init {
+        0% {
+            width: 0px;
+            height: 0px;
+        }
+        100% {
+            width: 56px;
+            height: 56px;
+            margin-top: 0px;
+            opacity: 1;
+        }	
+    }
+    @-webkit-keyframes puff_portrait {
+        0% {
+            top: 100%;
+            height: 0px;
+            padding: 0px;
+        }
+        100% {
+            top: 50%;
+            height: 100%;
+            padding: 0px 100%;
+        }	
+    }
+    @keyframes puff_portrait {
+        0% {
+            top: 100%;
+            height: 0px;
+            padding: 0px;
+        }
+        100% {
+            top: 50%;
+            height: 100%;
+            padding: 0px 100%;
+        }	
+    }
+    @-webkit-keyframes puff_landscape {
+        0% {
+            top: 100%;
+            width: 0px;
+            padding-bottom: 0px;
+        }
+        100% {
+            top: 50%;
+            width: 100%;
+            padding-bottom: 100%;
+        }	
+    }
+    @keyframes puff_landscape {
+        0% {
+            top: 100%;
+            width: 0px;
+            padding-bottom: 0px;
+        }
+        100% {
+            top: 50%;
+            width: 100%;
+            padding-bottom: 100%;
+        }	
+    }
+    @-webkit-keyframes borderRadius {
+        0% {
+            -webkit-border-radius: 50%;
+        }
+        100% {
+            -webkit-border-radius: 0px;
+        }	
+    }
+    @keyframes borderRadius {
+        0% {
+            -webkit-border-radius: 50%;
+        }
+        100% {
+            border-radius: 0px;
+        }	
+    }
+    @-webkit-keyframes moveDown {
+        0% {
+               top: 50%;
+        }
+        50% {
+           top: 40%;
+        }
+        100% {
+           top: 100%;
+        }	
+    }
+    @keyframes moveDown {
+        0% {
+               top: 50%;
+        }
+        50% {
+           top: 40%;
+        }
+        100% {
+           top: 100%;
+        }	
+    }
+    @-webkit-keyframes moveUp {
+        0% {
+            background: #FFB300;
+            top: 100%;
+        }
+        50% {
+           top: 40%;
+        }
+        100% {
+           top: 50%;
+           background: #E0E0E0;
+        }	
+    }
+    @keyframes moveUp {
+        0% {
+            background: #FFB300;
+            top: 100%;
+        }
+        50% {
+           top: 40%;
+        }
+        100% {
+           top: 50%;
+           background: #E0E0E0;
+        }	
+    }
+    @-webkit-keyframes materia_landscape {
+        0% {
+            background: #E0E0E0;
+        }
+        50% {
+            -webkit-border-radius: 4px;
+        }
+        100% {
+            width: 440px;
+            height: 280px;
+            background: #FFFFFF;
+            -webkit-border-radius: 4px;
+        }
+    }
+    @keyframes materia_landscape {
+        0% {
+            background: #E0E0E0;
+        }
+        50% {
+            border-radius: 4px;
+        }
+        100% {
+            width: 440px;
+            height: 280px;
+            background: #FFFFFF;
+            border-radius: 4px;
+        }
+    }
+    @-webkit-keyframes materia_portrait {
+        0% {
+            background: #E0E0E0;
+        }
+        50% {
+            -webkit-border-radius: 4px;
+        }
+        100% {
+            width: 280px;
+            height: 454px;
+            background: #FFFFFF;
+            -webkit-border-radius: 4px;
+        }
+    }
+    @keyframes materia_portrait {
+        0% {
+            background: #E0E0E0;
+        }
+        50% {
+            border-radius: 4px;
+        }
+        100% {
+            width: 280px;
+            height: 454px;
+            background: #FFFFFF;
+            border-radius: 4px;
+        }
+    }
+    @-webkit-keyframes moveIn {
+        0% {
+            margin-top: 50px;
+            opacity: 0;
+        }
+        100% { 
+            opacity: 1;
+            margin-top: -20px;
+        }	
+    }
+    @keyframes moveIn {
+        0% {
+            margin-top: 50px;
+            opacity: 0;
+        }
+        100% { 
+            opacity: 1;
+            margin-top: -20px;
+        }	
+    }
+    @-webkit-keyframes scaleIn {
+        0% {
+            -webkit-transform: scale(0);
+        }
+        100% { 
+            -webkit-transform: scale(1);
+        }	
+    }
+    @keyframes scaleIn {
+        0% {
+            transform: scale(0);
+        }
+        100% { 
+            transform: scale(1);
+        }	
+    }
+    @-webkit-keyframes ripple {
+        0% {
+            transform: scale3d(0, 0, 0); 
+        }
+        50%, 100% {
+            -webkit-transform: scale3d(1, 1, 1);
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    @keyframes ripple {
+        0% {
+            transform: scale3d(0, 0, 0); 
+        }
+        50%, 100% {
+            transform: scale3d(1, 1, 1);
+        }
+        100% {
+            opacity: 0;
+        }
+    }</style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- this is the markup. you can change the details (your own name, your own avatar etc.) but don’t change the basic structure! -->
+
+<aside class="profile-card">
+
+    <header>
+    
+        <!-- here’s the avatar -->
+        <a href="/">
+            <img src="data:image/jpeg;base64,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" />
+        </a>
+        
+        <!-- the username -->
+        <h1>Jeferson Adriano</h1>
+        
+        <!-- and role or location -->
+        <h2>Idealizador do projeto Biotec</h2>
+    
+    </header>
+
+    <!-- bit of a bio; who are you? -->
+    <div class="profile-bio">
+    
+        <p>Apresento com orgulho o Biotec SGO, fruto da colaboração entre mim e a orientadora Kamila Dotas. Para entrar em contato, minhas redes sociais estão abaixo!</p>
+    
+    </div>
+
+    <!-- some social links to show off -->
+    <ul class="profile-social-links">
+        <!-- twitter - el clásico  -->
+        <li>
+            <a href="https://instagram.com/jjefersonadriano?igshid=MzNlNGNkZWQ4Mg==">
+                <img src="intagram .png" alt="intagram">
+            </a>
+        </li>
+        <!-- envato – use this one to link to your marketplace profile -->
+        <li>
+            <a href="">
+                <img src="site.png" alt="meu site">
+            </a>
+        </li>
+        <!-- codepen - your codepen profile-->
+        <li>
+            <a href="https://contate.me/jefersonadriano">
+                <img src="whts.png" alt="whats">
+            </a>
+        </li>
+        <!-- add or remove social profiles as you see fit -->
+    </ul>
+    
+
+</aside>
+<!-- that’s all folks! -->
+<!-- partial -->
+  
+</body>
+</html>
